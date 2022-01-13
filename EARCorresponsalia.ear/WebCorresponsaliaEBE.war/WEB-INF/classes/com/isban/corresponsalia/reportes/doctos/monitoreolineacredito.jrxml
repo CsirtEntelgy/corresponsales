@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contactos" language="groovy" pageWidth="1115" pageHeight="1252" orientation="Landscape" columnWidth="1075" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1423d8cb-3a04-4b23-a417-145fa9b4a409">
+	<property name="ireport.zoom" value="1.3310000000000073"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaReporte" class="java.lang.String" isForPrompting="false"/>
+	<field name="saldoCheques" class="java.lang.String"/>
+	<field name="credDisponible" class="java.lang.String"/>
+	<field name="pendienteComp" class="java.lang.String"/>
+	<field name="limiteAlerta" class="java.lang.String"/>
+	<field name="credOtorgado" class="java.lang.String"/>
+	<field name="nomCorresponsal" class="java.lang.String"/>
+	<field name="credDispuesto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement uuid="0aafb4b4-50e5-4ee6-87f5-fe959a23a1f5" x="0" y="0" width="155" height="63"/>
+				<imageExpression><![CDATA["\\lf\\default\\img\\menu\\santanLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="66a6ad36-5d93-410a-9dcf-e8fb24e818b9" x="156" y="23" width="153" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c94547d0-7959-4be7-8dde-86d80a68f126" x="309" y="23" width="766" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7734bb63-4e06-48e2-8e1e-b62fab2a07d8" x="156" y="0" width="919" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE MONITOREO DE LÍNEA DE CRÉDITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="66a6ad36-5d93-410a-9dcf-e8fb24e818b9" x="156" y="43" width="153" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="e772af27-bb41-4f09-aa3f-7ddbfc01fbe3" mode="Transparent" x="0" y="0" width="156" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="c831b7ac-0bd0-4346-9239-162b727668b7" mode="Opaque" x="156" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Saldo Cheques]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f91cd09a-77e3-4e72-9016-5c9b49480a58" mode="Opaque" x="0" y="0" width="156" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Corresponsal]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="930e513d-505f-43a3-a660-00f30594869e" mode="Opaque" x="462" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Saldo Dispuesto]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="81cfab6b-ca61-4501-a633-142b96987475" mode="Opaque" x="768" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Estimado por Compensar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="230e04ac-8a41-4ba9-81f1-20dc65a48e65" mode="Opaque" x="615" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total Disponible]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="7b1e853c-d5f0-44e3-ad15-b0fd51ac8719" mode="Opaque" x="921" y="0" width="154" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Límite de Alerta]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup/>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="b89c82dc-e320-4646-b66b-b2fa318f7b85" mode="Opaque" x="309" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Crédito Otorgado]]></text>
+				</staticText>
+			</elementGroup>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<elementGroup>
+				<textField>
+					<reportElement uuid="54c1fb42-ac5a-4339-bb98-e140cdfccf4e" x="462" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{credDispuesto}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="cfa1aa6f-2170-4fb8-b430-9ed46a3b69c0" x="309" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{credOtorgado}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="9c1fb510-2dae-4727-8ac9-c3ac6b69fba2" x="768" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{pendienteComp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="38906635-10d7-40ae-a561-aa1df41688bb" x="615" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{credDisponible}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="fb4c2deb-1cdb-4ff9-968b-9681f2778243" x="921" y="0" width="154" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{limiteAlerta}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup/>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="cf470c8d-1984-4634-b813-b30fdd81f1e9" x="156" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{saldoCheques}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="78007565-61b8-41e1-9049-8c3835ef55e0" x="0" y="0" width="156" height="20"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[$F{nomCorresponsal}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

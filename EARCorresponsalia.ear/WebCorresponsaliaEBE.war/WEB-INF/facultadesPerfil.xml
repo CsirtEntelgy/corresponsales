@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PERFILES>
+
+	<PERFIL NOMBRE="grp_coba_mantenimiento">
+		<TRX>DLA0</TRX>
+		<TRX>DLA1</TRX>
+		<TRX>DLA2</TRX>
+		<TRX>DLA3</TRX>
+		<TRX>DLA4</TRX>
+		<TRX>DLA5</TRX>
+		<TRX>DLA6</TRX>
+		<TRX>DLA7</TRX>
+		<TRX>DLA9</TRX>
+		<TRX>DLB0</TRX>
+		<TRX>DLB1</TRX>
+		<TRX>DLB2</TRX>
+		<TRX>DLB3</TRX>
+		<TRX>DLB4</TRX>
+		<TRX>DLB5</TRX>
+		<TRX>DLB6</TRX>
+		<TRX>DLB7</TRX>
+		<TRX>DLC4</TRX>
+		<TRX>DLC5</TRX>
+		<TRX>DLC6</TRX>
+	</PERFIL>
+	
+	<PERFIL NOMBRE="grp_coba_parametrizacion">
+		<TRX>DLA0</TRX>
+		<TRX>DLA5</TRX>
+		<TRX>DLA6</TRX>
+		<TRX>DLA9</TRX>
+		<TRX>DLC5</TRX>
+		<TRX>DLC6</TRX>
+	</PERFIL>
+		
+	<PERFIL NOMBRE="grp_coba_monitoreo">
+		<TRX>DLA0</TRX>
+		<TRX>DLA1</TRX>
+		<TRX>DLA2</TRX>
+		<TRX>DLA3</TRX>
+		<TRX>DLA4</TRX>
+		<TRX>DLA6</TRX>
+		<TRX>DLA7</TRX>
+		<TRX>DLA8</TRX>
+		<TRX>DLB0</TRX>
+		<TRX>DLB1</TRX>
+		<TRX>DLB2</TRX>
+		<TRX>DLB3</TRX>
+		<TRX>DLB4</TRX>
+		<TRX>DLB5</TRX>
+		<TRX>DLB6</TRX>
+		<TRX>DLB7</TRX>
+		<TRX>DLC4</TRX>
+		<TRX>DLC5</TRX>
+		<TRX>DLC6</TRX>
+	</PERFIL>
+	
+	<PERFIL NOMBRE="grp_coba_consultas">
+		<TRX>DLA0</TRX>
+		<TRX>DLA2</TRX>
+		<TRX>DLA4</TRX>
+		<TRX>DLA6</TRX>
+		<TRX>DLB2</TRX>
+		<TRX>DLB5</TRX>
+		<TRX>DLB6</TRX>
+	</PERFIL>
+		
+
+	<PERFIL NOMBRE="grp_coba_maestro">
+		<TRX>DLA0</TRX>
+		<TRX>DLA1</TRX>
+		<TRX>DLA2</TRX>
+		<TRX>DLA3</TRX>
+		<TRX>DLA4</TRX>
+		<TRX>DLA5</TRX>
+		<TRX>DLA6</TRX>
+		<TRX>DLA7</TRX>
+		<TRX>DLA8</TRX>
+		<TRX>DLA9</TRX>
+		<TRX>DLB0</TRX>
+		<TRX>DLB1</TRX>
+		<TRX>DLB2</TRX>
+		<TRX>DLB3</TRX>
+		<TRX>DLB4</TRX>
+		<TRX>DLB5</TRX>
+		<TRX>DLB6</TRX>
+		<TRX>DLB7</TRX>
+		<TRX>DLB8</TRX>
+		<TRX>DLB9</TRX>
+		<TRX>DLC0</TRX>
+		<TRX>DLC1</TRX>
+		<TRX>DLC2</TRX>
+		<TRX>DLC3</TRX>
+		<TRX>DLC4</TRX>
+		<TRX>DLC5</TRX>
+		<TRX>DLC6</TRX>
+	</PERFIL>
+	
+</PERFILES>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contactos" language="groovy" pageWidth="740" pageHeight="1252" orientation="Landscape" columnWidth="700" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c549de96-05a5-4ae7-af57-5eeb770d9b44">
+	<property name="ireport.zoom" value="1.6105100000000043"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaReporte" class="java.lang.String" isForPrompting="false"/>
+	<field name="codigoCorresponsal" class="java.lang.String"/>
+	<field name="nombreCorresponsal" class="java.lang.String"/>
+	<field name="estatusCorresponsal" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement uuid="63fd1727-fd19-4d0c-b05e-b99f22c68637" x="0" y="0" width="155" height="63"/>
+				<imageExpression><![CDATA["\\lf\\default\\img\\menu\\santanLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="efa00691-884c-4d97-824d-39a7ea27ad81" x="155" y="23" width="109" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d18af758-a17a-4339-b291-70838354ae24" x="264" y="23" width="436" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a4bf76be-cc6e-439e-acb8-255d1cc7faec" x="155" y="0" width="545" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CORRESPONSALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="efa00691-884c-4d97-824d-39a7ea27ad81" x="155" y="43" width="545" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="b6f48d31-990d-41ec-9b7f-df6e25ff39d6" mode="Transparent" x="0" y="0" width="700" height="20" forecolor="#FFFFFF"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8b082fb0-0b56-4139-b3bb-eeb5ef626b62" mode="Opaque" x="155" y="0" width="402" height="37" backcolor="#CCCCCC"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Corresponsal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="33c340ba-780b-4e8e-9206-d90cf8061856" mode="Opaque" x="0" y="0" width="155" height="37" backcolor="#CCCCCC"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centro de Costos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1a477c0-69c6-4923-85a4-28b30a7f08c8" mode="Opaque" x="557" y="0" width="143" height="37" backcolor="#CCCCCC"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estatus]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement uuid="6ea985a7-28be-4662-88f7-a3f991b74a17" x="155" y="0" width="402" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCorresponsal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9486af52-2947-4d76-8cb0-ff76de6f8e5a" x="557" y="0" width="143" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{estatusCorresponsal}.equals( "CS2" ) ? "Activo":"Bloqueado"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6fe8f738-3543-4ecd-8ee8-e138e5599b82" x="0" y="0" width="155" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigoCorresponsal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="64" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

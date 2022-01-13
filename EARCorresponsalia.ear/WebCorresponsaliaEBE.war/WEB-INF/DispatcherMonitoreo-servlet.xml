@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	
+	<bean id="ControllerMonitoreoLineaCredito" name="ControllerMonitoreoLineaCredito" class="com.isban.corresponsalia.controllers.monitoreo.ControllerMonitoreoLineaCredito">
+			<property name="bOMonitoreoCredito" ref="bOMonitoreoCredito"/>
+	</bean>
+	  
+	<bean id="ControllerMonitoreoOperaciones" name="ControllerMonitoreoOperaciones" class="com.isban.corresponsalia.controllers.monitoreo.ControllerMonitoreoOperaciones">
+		<property name="bOMonitoreoOperaciones" ref="bOMonitoreoOperaciones"/>
+	</bean>
+	
+	<bean id="ControllerMonitoreoComisiones" name="ControllerMonitoreoComisiones" class="com.isban.corresponsalia.controllers.monitoreo.ControllerMonitoreoComisiones">
+	</bean>
+	
+	<!-- BO Sucursales Corresponsal -->
+	<bean id="bOSucursalesCorresponsal" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName" value="ejblocal:com.isban.corresponsalia.bo.monitoreo.BOSucursalesCorresponsal"/>
+		<property name="businessInterface" value="com.isban.corresponsalia.bo.monitoreo.BOSucursalesCorresponsal"/>
+	</bean>
+	<!-- Controller Sucursales Corresponsal -->
+	<bean id="ControllerSucursalesCorresponsal" name="ControllerSucursalesCorresponsal" class="com.isban.corresponsalia.controllers.monitoreo.ControllerSucursalesCorresponsal">
+		<property name="bOSucursalesCorresponsal" ref="bOSucursalesCorresponsal"/>
+	</bean>
+
+	<bean id="bOMonitoreoCredito"  class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.monitoreo.BOMonitoreoCredito"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.monitoreo.BOMonitoreoCredito"/>
+	</bean>
+	
+	<bean id="bOMonitoreoOperaciones"  class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.monitoreo.BOMonitoreoOperaciones"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.monitoreo.BOMonitoreoOperaciones"/>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+  		<property name="prefix" value="/jsp/private/monitoreo/" /> 
+  		<property name="suffix" value=".jsp" /> 
+	</bean>
+
+
+</beans>

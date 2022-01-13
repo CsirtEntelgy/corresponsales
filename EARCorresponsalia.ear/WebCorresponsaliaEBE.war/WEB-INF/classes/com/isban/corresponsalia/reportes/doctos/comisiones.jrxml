@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contactos" language="groovy" pageWidth="820" pageHeight="1231" orientation="Landscape" columnWidth="780" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20722caa-b0f1-4828-a954-d5a94c7f547e">
+	<property name="ireport.zoom" value="1.2100000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaReporte" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nombreCorr" class="java.lang.String" isForPrompting="false"/>
+	<field name="importeComisionTotalFront" class="java.lang.String"/>
+	<field name="descripcionOperacion" class="java.lang.String"/>
+	<field name="importeComisionClienteMontoFijoFront" class="java.lang.String"/>
+	<field name="importeComisionBancoMontoFijoFront" class="java.lang.String"/>
+	<field name="ivaTotalComisionFront" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement uuid="3c4639c3-98fc-4e44-8aae-565cd8652384" x="0" y="0" width="155" height="63"/>
+				<imageExpression><![CDATA["\\lf\\default\\img\\menu\\santanLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="bcf77394-3e9d-45e7-ba91-e1965952d166" x="155" y="23" width="153" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3b37fbaf-021c-455a-83d6-27fa16143f8d" x="308" y="23" width="459" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="115bf5bf-a5af-4a02-a779-9e4ab78e5a1c" x="155" y="0" width="612" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE COMISIONES POR CANAL DE CORRESPONSALÍA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bcf77394-3e9d-45e7-ba91-e1965952d166" x="155" y="43" width="153" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Corresponsal:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3b37fbaf-021c-455a-83d6-27fa16143f8d" x="308" y="43" width="459" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreCorr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="44eb970b-43ca-4bf0-8003-6e3c1fa49bec" mode="Transparent" x="0" y="0" width="767" height="22" forecolor="#FFFFFF"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="3fae05fc-184d-4a3b-ac3a-e453cad0033d" mode="Opaque" x="0" y="0" width="155" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre Operación]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="d073dd41-bdf3-4a1f-881f-6abed2bf7920" mode="Opaque" x="155" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Importe Total Comisión]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="1f9b8dc6-636f-4510-98be-571a21a1d084" mode="Opaque" x="308" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Pagado por el cliente]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="6400cc4d-7a20-4a85-b85b-60fa8c3b194d" mode="Opaque" x="461" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Pagado por el banco]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="91968e1d-978a-4eb0-a076-0d1b51069089" mode="Opaque" x="614" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[I.V.A]]></text>
+				</staticText>
+			</elementGroup>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<elementGroup>
+				<textField>
+					<reportElement uuid="9ac98efd-e149-4a8f-be6e-10ddfefea437" x="155" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{importeComisionTotalFront}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="c091f392-8916-4900-b7eb-ae0b41c8daab" x="0" y="0" width="155" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Justified"/>
+					<textFieldExpression><![CDATA[$F{descripcionOperacion}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="b2286fd3-3295-46af-b60b-ec04fb45d207" x="308" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[$F{importeComisionClienteMontoFijoFront}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="1fece45e-6b09-412a-b9e5-24525b942ffa" x="461" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[$F{importeComisionBancoMontoFijoFront}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="0a4d50eb-5883-490c-a97b-57b6bfbe94d3" x="614" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{ivaTotalComisionFront}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

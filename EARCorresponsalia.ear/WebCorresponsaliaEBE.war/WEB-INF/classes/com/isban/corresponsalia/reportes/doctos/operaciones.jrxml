@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contactos" language="groovy" pageWidth="800" pageHeight="1231" orientation="Landscape" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="84ef05d3-0d69-4609-8da7-e9cac9ad2cf1">
+	<property name="ireport.zoom" value="1.4641000000000044"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaReporte" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nombreCorr" class="java.lang.String" isForPrompting="false"/>
+	<field name="codigoOperacion" class="java.lang.String"/>
+	<field name="desCorta" class="java.lang.String"/>
+	<field name="importeMaximoOperacion" class="java.lang.String"/>
+	<field name="importeMinimoOperacion" class="java.lang.String"/>
+	<field name="acumuladoDiario" class="java.lang.String"/>
+	<field name="acumuladoMensual" class="java.lang.String"/>
+	<field name="horaInicio" class="java.lang.String"/>
+	<field name="horaFinal" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement uuid="1d78cb96-ef75-403a-8b06-64df33df47c9" x="0" y="0" width="153" height="63"/>
+				<imageExpression><![CDATA["\\lf\\default\\img\\menu\\santanLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="7e854cbd-2467-43cb-9854-b546453d3fed" x="153" y="23" width="153" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="51730f3f-236c-4055-9f42-b57cc515bf04" x="153" y="0" width="607" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE OPERACIONES POR CORRESPONSAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4245cb43-1015-4ed6-98d0-7b690be351bd" x="306" y="23" width="454" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1b3a878-274b-47e3-95ff-47cc9bf79b0c" x="306" y="43" width="454" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreCorr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="39ff0015-2954-431a-b689-07667e817dca" x="153" y="43" width="153" height="20"/>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Corresponsal:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="49aa2c57-a442-4f3a-b16e-d93c396b9ae0" x="0" y="0" width="760" height="38"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="a00efee8-5d19-4418-96bf-dce57ba829fd" mode="Opaque" x="0" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Código de operación]]></text>
+				</staticText>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement uuid="e3de3bfa-9c83-4323-a643-159c0092e2c1" mode="Opaque" x="153" y="0" width="153" height="37" backcolor="#CCCCCC"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre de operación]]></text>
+				</staticText>
+			</elementGroup>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<elementGroup>
+				<textField>
+					<reportElement uuid="947ab8e0-faab-41ad-bccc-be5c4452b117" x="153" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Justified"/>
+					<textFieldExpression><![CDATA[$F{desCorta}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<textField>
+					<reportElement uuid="73934cd0-c4ef-424e-a62c-75fc2923e592" x="0" y="0" width="153" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Justified"/>
+					<textFieldExpression><![CDATA[$F{codigoOperacion}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

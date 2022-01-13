@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>
+	WebCorresponsaliaEBE</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+ 	 
+	<context-param>
+		<param-name>ArchivoCLA</param-name>
+		<!--param-value>/proarchivapp/WebSphere/was/cfgCorresponsaliaBanc/Configuracion.cla</param-value-->
+		<param-value>Configuracion.cla</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>IdApp</param-name>
+		<param-value>WebCorresponsalia</param-value>
+	</context-param>
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	<listener>
+	    <listener-class>
+	      com.isban.corresponsalia.listener.CbHttpSessionListener
+	     </listener-class>
+ 	 </listener>
+	
+	<listener>
+		<listener-class>com.isban.corresponsalia.listener.ListenerConfigGeneral</listener-class>
+	</listener>
+ 	 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+                   /WEB-INF/Aspect.xml
+                   /WEB-INF/i18n.xml
+                   /WEB-INF/DispatcherPublico-servlet.xml
+                   /WEB-INF/DispatcherPrincipal-servlet.xml
+                   /WEB-INF/DispatcherErrores-servlet.xml
+                   /WEB-INF/DispatcherCanalCorresponsalia-servlet.xml
+                   /WEB-INF/DispatcherConsultas-servlet.xml
+                   /WEB-INF/DispatcherCorresponsales-servlet.xml
+                   /WEB-INF/DispatcherMonitoreo-servlet.xml
+                   /WEB-INF/DispatcherCatalogos-servlet.xml
+	   </param-value>
+	</context-param>
+	  
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>	
+	  
+	 
+	<servlet>
+		<servlet-name>DispatcherPrincipal</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>	
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherPrincipal</servlet-name>
+		<url-pattern>/principal/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DispatcherErrores</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>	
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherErrores</servlet-name>
+		<url-pattern>/errores/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DispatcherPublico</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherPublico</servlet-name>
+		<url-pattern>/publico/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>DispatcherCanalCorresponsalia</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherCanalCorresponsalia</servlet-name>
+		<url-pattern>/canalcorresponsalia/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DispatcherConsultas</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherConsultas</servlet-name>
+		<url-pattern>/consultas/*</url-pattern>
+	</servlet-mapping>
+	 
+	<servlet>
+		<servlet-name>DispatcherCorresponsales</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherCorresponsales</servlet-name>
+		<url-pattern>/corresponsales/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DispatcherMonitoreo</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherMonitoreo</servlet-name>
+		<url-pattern>/monitoreo/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DispatcherCatalogos</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispatcherCatalogos</servlet-name>
+		<url-pattern>/catalogos/*</url-pattern>
+	</servlet-mapping>
+	 
+	 
+	<filter>
+		<display-name>FilterLogin</display-name>
+		<filter-name>FilterLogin</filter-name>
+		<filter-class>com.isban.corresponsalia.filter.FilterCorresponsalia</filter-class>
+	</filter>
+	
+	
+	<filter-mapping>
+    	 <filter-name>FilterLogin</filter-name>
+    	 <url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	  
+	 <!--  
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/errores/notFound.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/jsp/errores/exception.jsp</location>
+	</error-page>
+	 -->
+
+	 	
+</web-app>

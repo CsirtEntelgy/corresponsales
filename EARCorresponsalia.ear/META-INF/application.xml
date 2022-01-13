@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="Application_ID" version="1.4">
+	<display-name>EARCorresponsalia</display-name>
+	<module id="EjbModule_9990466943458">
+		<ejb>EJBCorresponsalia.jar</ejb>
+	</module>
+	<module id="WebModule_9990945768695">
+		<web>
+			<web-uri>WebCorresponsaliaEBE.war</web-uri>
+			<context-root>WebCorresponsaliaEBE</context-root>
+		</web>
+	</module>	
+</application>
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="990" pageHeight="845" columnWidth="950" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="2821ba4c-3e8f-4814-ad99-06b22e4b613b">
+	<property name="ireport.zoom" value="1.948717100000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaReporte" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="queryReport" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[$P!{queryReport}]]>
+	</queryString>
+	<field name="ID" class="java.math.BigDecimal"/>
+	<field name="TIPO" class="java.math.BigDecimal"/>
+	<field name="FCH_INICIO" class="java.sql.Timestamp"/>
+	<field name="FCH_FIN" class="java.sql.Timestamp"/>
+	<field name="NUM_TARJ" class="java.lang.String"/>
+	<field name="NUM_CUENTA" class="java.lang.String"/>
+	<field name="IMPORTE" class="java.math.BigDecimal"/>
+	<field name="DURACION" class="java.math.BigDecimal"/>
+	<field name="COD_ERROR" class="java.lang.String"/>
+	<field name="RESULTADO" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2fb32607-ff8b-46de-a1b9-af305535b1e2" x="0" y="0" width="950" height="13"/>
+				<textElement/>
+				<text><![CDATA[REPORTE DE LOG TRANSACCIONAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f61affb-cce0-4e6b-a802-725859b27121" x="0" y="13" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="650d4971-e5a4-4db9-a579-f4d3b3166314" x="90" y="13" width="860" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="75cdc791-d429-4000-88ea-437c18028c21" x="350" y="27" width="120" height="14"/>
+				<textElement/>
+				<text><![CDATA[Número de Tarjeta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e6d4d383-4d2c-45b0-b4f4-2bb352c310d9" x="470" y="27" width="120" height="14"/>
+				<textElement/>
+				<text><![CDATA[Número de Cuenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0825af17-26e6-4538-bb8b-ec8088b8513b" x="680" y="27" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Tiempo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="30970f64-41f7-4e8c-a94d-5fe1ff047beb" x="90" y="27" width="170" height="14"/>
+				<textElement/>
+				<text><![CDATA[Tipo de Operación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ccbc5102-1704-4f54-b7ec-6fcd52451651" x="590" y="27" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b99ec68d-0e82-4da0-851c-fee7dab7ccd0" x="770" y="27" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Código 390]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="da0b7e23-4cc9-42af-bd25-99be630b2abd" x="260" y="27" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Fecha de operación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f3c43788-eec4-43e4-a73d-b91fc263a30c" x="860" y="27" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Código respuesta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="161e6b45-102e-4d8f-9f2f-226a59ba2ecd" x="0" y="27" width="90" height="14"/>
+				<textElement/>
+				<text><![CDATA[Folio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement uuid="705056c7-c029-4e1e-a4e1-4756a161c61c" x="590" y="0" width="90" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{IMPORTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5eff28f6-e4b4-4923-9454-4baf62d7ad55" x="860" y="0" width="90" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RESULTADO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41dec80e-fca3-44a5-a192-a14f3fb344cf" x="350" y="0" width="120" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NUM_TARJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f40b3e45-bd08-4237-8e54-7a6211d265b3" x="770" y="0" width="90" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{COD_ERROR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c10af2a3-c374-4de4-9ef6-6f35f1624526" x="680" y="0" width="90" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DURACION}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="6d33b908-ddac-41d0-879f-e8645924f0b4" x="470" y="0" width="120" height="16"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None"/>
+				<textFieldExpression><![CDATA[$F{NUM_CUENTA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="8f568f68-2542-4250-93ad-d5e422d747ec" x="0" y="0" width="90" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8fa78176-b039-4d1a-9d72-99dfbe443cc1" x="90" y="0" width="170" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TIPO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7631bfce-8d62-494f-9025-5f7319983797" x="260" y="0" width="90" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FCH_INICIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

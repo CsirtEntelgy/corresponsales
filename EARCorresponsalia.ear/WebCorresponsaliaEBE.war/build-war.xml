@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="WebCorresponsaliaEBE">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="/productos/WebSphere/AppServer"/>
+    <!--property name="ECLIPSE_HOME" value="D:/Archivos de programa/IBM/SDP/runtimes/base_v7/"/-->
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="WAS7.libraryclasspath">
+		<fileset dir="${ECLIPSE_HOME}/lib/">
+			<include name="**/com"/>
+			<include name="**/*.jar"/>			
+		</fileset>
+        <pathelement location="${ECLIPSE_HOME}/lib/bootstrap.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/lib/j2ee.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/lib/mail-impl.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/lib/rsadbutils.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.jaxb.tools.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.jaxws.tools.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.admin.core.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.admin.services.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.ejbportable.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.emf.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.jpa.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.portletcontainer.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.prereq.commonj-twm.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.prereq.soap.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.prereq.vajava.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.prereq.wsdl4j.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.runtime.dist.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.runtime.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.sib.server.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.sip.container.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.sip.interface.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.wccm.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.webcontainer.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.ws.wsadie/marshall.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.ibm.wsfp.main.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.commonj.sdo.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.change.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.sdo.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/profiles/AppSrv02/installedConnectors/wmq.jmsra.rar/com.ibm.mq.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/profiles/AppSrv02/installedConnectors/wmq.jmsra.rar/com.ibm.mqjms.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/profiles/AppSrv02/installedConnectors/wmq.jmsra.rar/dhbcore.jar"/>
+    </path>
+    <path id="BaW.libraryclasspath">
+	        <pathelement location="${basedir}/../EJBCorresponsaliaClient.jar/com"/>
+	        <pathelement location="${basedir}/../EJBCorresponsalia.jar/com" />
+	        <pathelement location="${basedir}/../EJBCorresponsaliaClient.jar/"/>
+	        <pathelement location="${basedir}/../EJBCorresponsalia.jar/" />
+		<pathelement location="${basedir}/../../../build/EJBCorresponsaliaClient.jar"/>
+		<pathelement location="${basedir}/../../../build/EJBCorresponsalia.jar"/>
+		<fileset dir="${basedir}/../EJBCorresponsaliaClient.jar/com">
+			<include name="**/com"/>
+			<include name="**/*.java"/>			
+		</fileset>
+		<fileset dir="${basedir}/../EJBCorresponsaliaClient.jar/">
+			<include name="**/com"/>
+			<include name="**/*.java"/>			
+		</fileset>
+
+		<fileset dir="${basedir}/../EJBCorresponsalia.jar/com">
+			<include name="**/com"/>
+			<include name="**/*.java"/>			
+		</fileset>
+		<fileset dir="${basedir}/../EJBCorresponsalia.jar/">
+			<include name="**/com"/>
+			<include name="**/*.java"/>			
+		</fileset>
+		<fileset dir="${basedir}/WEB-INF/lib">
+			<include name="**/*.jar"/>			
+		</fileset>
+
+
+    </path>
+    <path id="BE.libraryclasspath">
+		<fileset dir="${basedir}/..">
+			<include name="**/com"/>
+			<include name="**/*.jar"/>			
+		</fileset>
+		<pathelement location="${basedir}/WEB-INF/lib/servlet-api.jar"/>
+
+    </path>
+    <path id="WebCorresponsaliaEBE.classpath">
+        <pathelement location="/WEB-INF/classes"/>
+        <path refid="WAS7.libraryclasspath"/>
+        <path refid="BaW.libraryclasspath"/>
+        <path refid="BE.libraryclasspath"/>
+    </path>
+    <target name="init">
+    </target>
+    <target name="clean">
+        <!--delete dir="${basedir}/../../../dist/EARCorresponsalia.ear/WebCorresponsaliaEBE.war/WEB-INF/classes" excludes="**/*.launch, **/*.java"/-->
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="clean" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac encoding="cp1252"  debug="true" debuglevel="${debuglevel}" 
+		destdir="${basedir}/../../../dist/EARCorresponsalia.ear/WebCorresponsaliaEBE.war/WEB-INF/classes" 
+		 srcdir="${basedir}/WEB-INF/classes" source="${source}">            
+            <classpath refid="WebCorresponsaliaEBE.classpath"/>
+	    <compilerarg value="-Xlint:deprecation"/>
+        </javac>
+    </target>
+    <echo message="basedir ${basedir}"/>
+    <mkdir dir="../../../dist/WEB-INF/lib"/>
+    <copy toDir="../../../dist/WEB-INF/lib">
+        <fileset dir="../../../build">
+           <include name="EJBCorresponsaliaClient.jar"/>
+        </fileset>
+    </copy>
+    <copy toDir="../../../dist/WEB-INF/lib">
+        <fileset dir="..">
+           <exclude name="EJB*.jar"/>
+           <include name="**/*.jar"/>
+        </fileset>
+    </copy>
+    <target name="war" depends="build-project">
+    	<war manifest ="${basedir}/META-INF/MANIFEST.MF" destfile="../../../build/WebCorresponsaliaEBE.war" webxml="${basedir}/WEB-INF/web.xml">
+        	<fileset dir=".">
+                  <exclude name="**/WebContent/"/>
+                  <exclude name="**/*.java"/>
+                </fileset>
+
+                <classes dir="${basedir}/../../../dist/EARCorresponsalia.ear/WebCorresponsaliaEBE.war/WEB-INF/classes"/>
+        </war>
+    </target>              	
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+</project>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<bean id="ControllerCorresponsalesAltaMasiva" name="ControllerCorresponsalesAltaMasiva" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesAltaMasiva">
+
+	</bean>
+	<bean id="ControllerCorresponsalesParametriaMasiva" name="ControllerCorresponsalesParametriaMasiva" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesParametriaMasiva">
+
+	</bean>
+
+	<bean id="ControllerCorresponsalesComisiones" name="ControllerCorresponsalesComisiones" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesComisiones">
+		<property name="bOCorresponsalesComisiones" ref="bOCorresponsalesComisiones"/>
+		<property name="bOCorresponsalesOperaciones" ref="bOCorresponsalesOperaciones"/>
+	</bean>
+
+	<bean id="ControllerCorresponsalesContactos" name="ControllerCorresponsalesContactos" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesContactos">
+		<property name="bOCorresponsalesContactos" ref="bOCorresponsalesContactos"/>
+	</bean>
+
+	<bean id="bOCorresponsalesContactos" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesContactos"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesContactos"/>
+	</bean>
+	
+	<bean id="ControllerCorresponsalesExcepcionOperaciones" name="ControllerCorresponsalesExcepcionOperaciones" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesExcepcionOperaciones">
+		<property name="bOCorresponsalesOperaciones" ref="bOCorresponsalesOperaciones"/>	
+	</bean>
+	
+	<bean id="ControllerCorresponsalesMantenimiento" name="ControllerCorresponsalesMantenimiento" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesMantenimiento">
+		<property name="bOCorresponsalesMantenimiento" ref="bOCorresponsalesMantenimiento"/>
+	</bean>
+
+	<bean id="ControllerCorresponsalesOperaciones" name="ControllerCorresponsalesOperaciones" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesOperaciones">
+		<property name="bOCorresponsalesOperaciones" ref="bOCorresponsalesOperaciones"/>
+	</bean>
+	
+	<!--  
+	<bean id="ControllerCorresponsalesSucursales" name="ControllerCorresponsalesSucursales" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesSucursales">
+		<property name="bOCorresponsalesSucursales" ref="bOCorresponsalesSucursales"/>		
+	</bean>
+	-->
+	
+	<bean id="ControllerCorresponsalesSucursalesFix" name="ControllerCorresponsalesSucursalesFix" class="com.isban.corresponsalia.controllers.corresponsales.ControllerCorresponsalesSucursalesFix">
+		<property name="bOCorresponsalesSucursalesFix" ref="bOCorresponsalesSucursalesFix"/>		
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+  		<property name="prefix" value="/jsp/private/corresponsales/" /> 
+  		<property name="suffix" value=".jsp" /> 
+	</bean>
+	
+	<!-- 
+	<bean id="bOCorresponsalesSucursales"  class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesSucursales"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesSucursales"/>
+	</bean>
+	 -->
+	 
+	<bean id="bOCorresponsalesSucursalesFix"  class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesSucursalesFix"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesSucursalesFix"/>
+	</bean>
+	
+	<bean id="bOCorresponsalesMantenimiento"  class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesMantenimiento"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesMantenimiento"/>
+	</bean>	
+
+	<bean id="bOCorresponsalesOperaciones" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesOperaciones"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesOperaciones"/>
+	</bean>
+	
+	<bean id="bOCorresponsalesComisiones" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesComisiones"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesComisiones"/>
+	</bean>
+
+	<bean id="bOCorresponsalesAltaMasiva" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesAltaMasiva"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.corresponsales.BOCorresponsalesAltaMasiva"/>
+	</bean>
+
+</beans>

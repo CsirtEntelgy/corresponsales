@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	 <bean id="ControllerCanalCorresponsaliaOperaciones" name="ControllerCanalCorresponsaliaOperaciones" class="com.isban.corresponsalia.controllers.canalcorresponsalia.ControllerCanalCorresponsaliaOperaciones">
+		<property name="bOCorresponsaliaOperaciones" ref="bOCorresponsaliaOperaciones"/>
+	</bean>
+
+	<bean id="bOCorresponsaliaOperaciones"  class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+		<property name="jndiName"           value="ejblocal:com.isban.corresponsalia.bo.canalcorresponsalia.BOCorresponsaliaOperaciones"/>	    
+		<property name="businessInterface"  value="com.isban.corresponsalia.bo.canalcorresponsalia.BOCorresponsaliaOperaciones"/>
+	</bean>
+	 
+	
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+  		<property name="prefix" value="/jsp/private/canalcorresponsalia/" /> 
+  		<property name="suffix" value=".jsp" /> 
+	</bean>
+
+</beans>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentes> 
+
+	<cmpConfiguracion id="1" activo="true" init="false" class="com.isban.configuracion.Configuracion">
+		<modo             replicable='false'>local</modo><!-- valores=local,distribuido-->
+		<servidor         replicable='false'>localhost</servidor>
+		<IdConfigApp      replicable='false'>WebCorresponsalia</IdConfigApp>
+		<refIdApp         replicable='false'>WebCorresponsalia</refIdApp>
+		<nombreAplicacion replicable='false'>WebCorresponsalia</nombreAplicacion>
+		<maximoRegistros  replicable='false'>1000</maximoRegistros>
+		<registrosPagina  replicable='false'>50</registrosPagina>
+		<maximoPaginas    replicable='false'>20</maximoPaginas>
+	</cmpConfiguracion>
+	
+	<cmpLogging id="2" activo="true" init="true" class="com.isban.logger.Logging">
+		<MODE_LOG     replicable='true'>CONSOLE</MODE_LOG>
+		<PATH_LOG     replicable='true'>/arquitecturaEBE/temp/cmpLogging/webcorresponsalia.log</PATH_LOG>
+		<LEVEL_LOG    replicable='true'>DEBUG</LEVEL_LOG>
+		<DB_LOGGING   replicable='true'>FALSE</DB_LOGGING>
+		<CAMPO_FILTRO replicable='true'></CAMPO_FILTRO>
+		<FILTRO       replicable='true'></FILTRO>
+		<ID_CANAL     replicable='true'></ID_CANAL>
+	</cmpLogging>
+	
+	<IsbanDataAccess id="3" activo="true" init="true" class="com.isban.dataaccess.DataAccess">
+		<GENERAL.ID_DEFAULT_CONFIGURATION_CICS                       replicable='false'>CICS_CORRESPONSALIA</GENERAL.ID_DEFAULT_CONFIGURATION_CICS>
+		<GENERAL.ID_DEFAULT_CONFIGURATION_GENERICMQ                  replicable='false'></GENERAL.ID_DEFAULT_CONFIGURATION_GENERICMQ>
+		<GENERAL.ID_DEFAULT_CONFIGURATION_DB                         replicable='false'>DB_SESIONES</GENERAL.ID_DEFAULT_CONFIGURATION_DB>
+		<GENERAL.ID_DEFAULT_CONFIGURATION_TUX                        replicable='false'></GENERAL.ID_DEFAULT_CONFIGURATION_TUX>
+		<GENERAL.FACTORIES_REFERENCE                                 replicable='false'>DATABASE.DB_SESIONES@CICS.CICS_CORRESPONSALIA@</GENERAL.FACTORIES_REFERENCE>
+		<GENERAL.PROFILE_MODE                                        replicable='false'>OFF</GENERAL.PROFILE_MODE>
+		<GENERAL.SIMUALATION_MODE                                    replicable='false'>OFF</GENERAL.SIMUALATION_MODE>
+		<GENERAL.STRESS_MODE                                         replicable='false'>OFF</GENERAL.STRESS_MODE>
+		<GENERAL.PATH_PROFILE                                        replicable='false'>/arquitecturaEBE/temp/cmpIsbanDataAccess/profiles/</GENERAL.PATH_PROFILE>
+		<GENERAL.TRACE_ACTIVO                                        replicable='false'>OFF</GENERAL.TRACE_ACTIVO>
+		<GENERAL.LOG_FILE                                            replicable='false'>webcorresponsalia.log</GENERAL.LOG_FILE>
+		<GENERAL.LOG_PATH                                            replicable='false'>/arquitecturaEBE/temp/cmpIsbanDataAccess/log/</GENERAL.LOG_PATH>
+		<GENERAL.LOG_LEVEL                                           replicable='false'>DEBUG</GENERAL.LOG_LEVEL>
+		<GENERAL.SECURITY_KEY                                        replicable='false'>webcorresponsalia</GENERAL.SECURITY_KEY>
+		<DATABASE.DB_SESIONES.FACTORY_CLASS_NAME                     replicable='false'>com.isban.dataaccess.factories.jdbc.FactoryJDBC</DATABASE.DB_SESIONES.FACTORY_CLASS_NAME>
+		<DATABASE.DB_SESIONES.TYPE_CONECTION                         replicable='false'>DATASOURCE</DATABASE.DB_SESIONES.TYPE_CONECTION>
+		<DATABASE.DB_SESIONES.JNDI_NAME                              replicable='false'>jdbc/Sessions</DATABASE.DB_SESIONES.JNDI_NAME>
+		<DATABASE.DB_SESIONES.JDBC_DRIVER                            replicable='false'></DATABASE.DB_SESIONES.JDBC_DRIVER>
+		<DATABASE.DB_SESIONES.JDBC_URL                               replicable='false'></DATABASE.DB_SESIONES.JDBC_URL>
+		<DATABASE.DB_SESIONES.JDBC_USR                               replicable='false'></DATABASE.DB_SESIONES.JDBC_USR>
+		<DATABASE.DB_SESIONES.JDBC_PWD                               replicable='false'></DATABASE.DB_SESIONES.JDBC_PWD>
+		<DATABASE.DB_SESIONES.TIME_OUT                               replicable='false'>1000</DATABASE.DB_SESIONES.TIME_OUT>
+		<CICS.CICS_CORRESPONSALIA.FACTORY_CLASS_NAME                 replicable='false'>com.isban.dataaccess.factories.jms.FactoryJMS</CICS.CICS_CORRESPONSALIA.FACTORY_CLASS_NAME>
+		<CICS.CICS_CORRESPONSALIA.JNDI_QUEUE_CONNECTION_FACTORY      replicable='false'>jms/QFactoryCorBanc2</CICS.CICS_CORRESPONSALIA.JNDI_QUEUE_CONNECTION_FACTORY>
+		<CICS.CICS_CORRESPONSALIA.JNDI_QUEUE_REQUEST                 replicable='false'>jms/QSendCorBanc</CICS.CICS_CORRESPONSALIA.JNDI_QUEUE_REQUEST>
+		<CICS.CICS_CORRESPONSALIA.JNDI_QUEUE_RESPONSE                replicable='false'>jms/QReceiveCorBanc</CICS.CICS_CORRESPONSALIA.JNDI_QUEUE_RESPONSE>
+		<CICS.CICS_CORRESPONSALIA.RECEIVE_MESSAGE_TIMEOUT            replicable='false'>11000</CICS.CICS_CORRESPONSALIA.RECEIVE_MESSAGE_TIMEOUT>
+		<CICS.CICS_CORRESPONSALIA.TIME_TO_LIVE_MESSAGE               replicable='false'>11000</CICS.CICS_CORRESPONSALIA.TIME_TO_LIVE_MESSAGE>
+		<CICS.CICS_CORRESPONSALIA.USR_390                            replicable='false'>DEIFNOMR</CICS.CICS_CORRESPONSALIA.USR_390>
+		<CICS.CICS_CORRESPONSALIA.ADD_HEADER                         replicable='false'>TRUE</CICS.CICS_CORRESPONSALIA.ADD_HEADER>
+	</IsbanDataAccess>
+		
+	 <Aplicacion id="8" activo="true" init="false" class="">
+		<CORRESPONSALIA    replicable='true'>CICS_CORRESPONSALIA</CORRESPONSALIA>
+		<SESIONES          replicable='true'>DB_SESIONES</SESIONES>
+		<ID_ENTIDAD_BANCO  replicable='true'>0014</ID_ENTIDAD_BANCO>
+		<CANAL             replicable='true'>002</CANAL>
+		<CENTRO_COSTOS     replicable='true'>6531</CENTRO_COSTOS>
+	 </Aplicacion>
+	
+	<cmpLookAndFeel id="4" activo="true" init="false" class="">
+		<LookAndFeel         replicable='false'>default</LookAndFeel>
+		<ValidaSesiones      replicable='false'>0</ValidaSesiones><!-- 0=Inhabilitado,1=Habilitado -->
+		<UsaSAM              replicable='false'>0</UsaSAM>        <!-- 0=Inhabilitado,1=Habilitado -->
+		<UsaMenu             replicable='false'>1</UsaMenu>       <!-- 0=Inhabilitado,1=Habilitado -->
+		<UsaMensajes         replicable='false'>0</UsaMensajes>   <!-- 0=Inhabilitado,1=Habilitado -->
+		<TipoMenu            replicable='false'>0</TipoMenu>      <!-- 0=Estatico,1=Dinamico -->
+		<TipoIdsMmenu        replicable='false'>1</TipoIdsMmenu>  <!-- 0=Excluyentes,1=Incluyentes -->
+		<GrupoSAM            replicable='false'>grp_coba_mantenimiento,grp_coba_parametrizacion,grp_coba_monitoreo,grp_coba_consultas,grp_coba_maestro</GrupoSAM>
+		<Idioma              replicable='false'>es_MX</Idioma>
+		<LogoCorporativo     replicable='false'>logoCorporativo.jpg</LogoCorporativo>
+		<LogoAplicacion      replicable='false'></LogoAplicacion>
+		<LogoNombreApp       replicable='false'></LogoNombreApp>
+		<LogoAvisos          replicable='false'>logoAvisos.gif</LogoAvisos>
+		<LinkHeader1         replicable='false'></LinkHeader1>
+		<LinkHeader2         replicable='false'></LinkHeader2>
+		<LinkHeader3         replicable='false'></LinkHeader3>
+		<LinkHeader4         replicable='false'></LinkHeader4>
+		<LinkHeader5         replicable='false'></LinkHeader5>
+		<LinkAyuda           replicable='false'></LinkAyuda>
+		<LinkLogoCorporativo replicable='false'>http://www.santander.com.mx</LinkLogoCorporativo>
+		<LinkLogoAplicacion  replicable='false'>http://mxfrvlpcbdes002.dev.mx.corp:3080/WebCorresponsaliaEBE/</LinkLogoAplicacion>
+		<LinkLogoNombreApp   replicable='false'>http://mxfrvlpcbdes002.dev.mx.corp:3080/WebCorresponsaliaEBE/</LinkLogoNombreApp>
+		<LinkSalirSAM        replicable='false'><![CDATA[http://mxfrvlpcbdes002.dev.mx.corp:3080/WebCorresponsaliaEBE/publico/login.go]]></LinkSalirSAM>
+		<LinkAvisos          replicable='false'>../avisos/mostrarAvisos.do</LinkAvisos>
+		<LinkSesionExistente replicable='false'>publico/sesionExistente.go</LinkSesionExistente>
+		<LinkSalirApp        replicable='false'>../principal/salir.do</LinkSalirApp>
+		<LinkPagInicio       replicable='false'><![CDATA[http://mxfrvlpcbdes002.dev.mx.corp:3080/WebCorresponsaliaEBE/publico/login.go]]></LinkPagInicio>
+		<PaginaExceptionEBE  replicable='false'>/errores/errorEBE.do</PaginaExceptionEBE>
+		<PaginaExceptionGral replicable='false'>/errores/errorGrl.do</PaginaExceptionGral>
+	</cmpLookAndFeel>
+
+	<cmpSesionesApi id="5" activo="true" init="false" class="">
+		<ID_CANAL replicable='true'>DB_SESIONES</ID_CANAL>
+		<TIME_OUT replicable='true'>900</TIME_OUT>
+	</cmpSesionesApi>
+	
+</componentes>
