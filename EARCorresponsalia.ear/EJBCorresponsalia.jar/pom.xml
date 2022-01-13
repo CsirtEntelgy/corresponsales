@@ -6,6 +6,8 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 			<lib>${basedir}/../WebCorresponsaliaEBE.war/WEB-INF/lib</lib> 
 			<jar>${basedir}/../EJBCorresponsaliaClient.jar/target/</jar>
+			<sonar.organization>dazaeev</sonar.organization> 
+			<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<modelVersion>4.0.0</modelVersion>  
 		<groupId>mx.isban.Corbanc</groupId>  
