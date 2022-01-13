@@ -5,7 +5,7 @@
 		<jar>${basedir}/EARCorresponsalia.ear/EJBCorresponsaliaClient.jar/target</jar>
 		<jar2>${basedir}/EARCorresponsalia.ear/EJBCorresponsalia.jar/target</jar2>
 		<war>${basedir}/EARCorresponsalia.ear/target</war>
-		<sonar.organization>dazaeev</sonar.organization>
+		<sonar.organization>dazaeev</sonar.organization> 
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
